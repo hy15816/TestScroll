@@ -17,16 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    /************************************************************************
+                                设置tableView基本属性
+     ************************************************************************/
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 15)];
     view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.tableHeaderView = view;
     self.tableView.backgroundColor = [UIColor groupTableViewBackgroundColor];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    
+    /************************************************************************
+                                设置分割线缩进-1.1
+     ************************************************************************/
+    [self updateSeparatorInset:UIEdgeInsetsZero obj:self.tableView];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,72 +40,72 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Private Mothod
 
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of rows
-//    return 0;
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (void)updateSeparatorInset:(UIEdgeInsets)tabSeparatorInset obj:(id)obj {
     
-    // Configure the cell...
+    if ([obj respondsToSelector:@selector(setSeparatorInset:)]) {
+        [obj setSeparatorInset:tabSeparatorInset];
+    }
     
-    return cell;
+    if ([obj respondsToSelector:@selector(setLayoutMargins:)]) {
+        [obj setLayoutMargins:tabSeparatorInset];
+    }
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+
+#pragma mark - Table view data source <子类必须重载/实现>
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 1;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return 0;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    static NSString *_cellid = @"cell id";
+//    UITableViewCell *cell = [UITableViewCell cellWithTableView:tableView cid:_cellid];
+//    cell.textLabel.text = [NSString stringWithFormat:@" cell - %1ld",(long)indexPath.row];
+//    
+//    return nil;
+//}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    /************************************************************************
+                                设置分割线缩进-1.2
+     ************************************************************************/
+    [self updateSeparatorInset:_tabSeparatorInset obj:cell];
+    
 }
-*/
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Setters
+
+
+- (void)setTabSeparatorInset:(UIEdgeInsets)tabSeparatorInset{
+    
+    _tabSeparatorInset = tabSeparatorInset;
+    
+    [self updateSeparatorInset:tabSeparatorInset obj:self.tableView];
 }
-*/
 
+
+
+#pragma mark - Public Method
 
 - (NSString *)cellText:(BOOL)didLoad{
     

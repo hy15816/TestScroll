@@ -9,6 +9,6 @@
 #import "LSBaseTableViewController.h"
 #import "NewTextView.h"
 
-@interface SecondViewController : LSBaseTableViewController<UIScrollViewDelegate,UITextViewDelegate,NewTextViewDelegate>
+@interface SecondViewController : LSBaseTableViewController<UIScrollViewDelegate,UITextViewDelegate>
 
 @end

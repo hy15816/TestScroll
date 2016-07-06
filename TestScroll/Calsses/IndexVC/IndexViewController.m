@@ -60,6 +60,7 @@
         control = kStoryboardMain(@"TestFieldViewController");
     }
     if (control) {
+        NSLog(@".....%@",[self.navigationController class]);
         [self.navigationController pushViewController:control animated:YES];
     }
     

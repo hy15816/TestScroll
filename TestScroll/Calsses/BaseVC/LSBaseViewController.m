@@ -24,6 +24,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setTableViewSeparatorInset:(UIEdgeInsets)inset obj:(id)obj{
+    
+    if ([obj respondsToSelector:@selector(setSeparatorInset:)]) {
+        [obj setSeparatorInset:inset];
+    }
+    
+    if ([obj respondsToSelector:@selector(setLayoutMargins:)]) {
+        [obj setLayoutMargins:inset];
+    }
+}
+
 /*
 #pragma mark - Navigation
 

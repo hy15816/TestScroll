@@ -9,11 +9,13 @@
 #import "TestFieldViewController.h"
 #import "LSTextField.h"
 
-@interface TestFieldViewController ()
+@interface TestFieldViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+
 @property (strong, nonatomic) IBOutlet LSTextField *testField;  // default
 @property (strong,nonatomic) LSTextField *numberField;          //number
 @property (strong,nonatomic) LSTextField *alphabetField;          //alphabet
-
+@property (strong,nonatomic) UITableView *tableView;
 
 @end
 
@@ -28,6 +30,7 @@
     [self.view addSubview:self.numberField];
     [self.view addSubview:self.alphabetField];
     
+    [self.view addSubview:self.tableView];
     
     NSLog(@"MAXFLOAT:%f",MAXFLOAT);
 }
@@ -37,8 +40,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1000;
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *_cellid = @"cell id";
+    UITableViewCell *cell = [UITableViewCell cellWithTableView:tableView cid:_cellid];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:_cellid];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_cellid];
+//    }
+    cell.textLabel.text = [NSString stringWithFormat:@" cell - %1ld",(long)indexPath.row];
+    return cell;
+}
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self setTableViewSeparatorInset:UIEdgeInsetsZero obj:cell];
+}
+
+#pragma mark - Seeters
 
 - (LSTextField *)numberField {
     
@@ -68,5 +92,20 @@
     
     return _alphabetField;
 }
+
+
+- (UITableView *)tableView{
+    
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 300, self.view.frame.size.width, 200) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        
+        [self setTableViewSeparatorInset:UIEdgeInsetsZero obj:_tableView];
+    }
+    
+    return _tableView;
+}
+
 
 @end

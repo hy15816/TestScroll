@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITableViewCell+LSAdd.h"
+
 
 @interface LSBaseViewController : UIViewController
+
+- (void)setTableViewSeparatorInset:(UIEdgeInsets)inset obj:(id)obj;
 
 @end

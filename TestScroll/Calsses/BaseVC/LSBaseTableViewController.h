@@ -9,9 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "GlobalTool.h"
 #import "NSString+LSAdd.h"
+#import "UITableViewCell+LSAdd.h"
 
 
 @interface LSBaseTableViewController : UITableViewController
+
+/**
+ *  分割线的缩进， 默认 UIEdgeInsetsZero
+ */
+@property (assign,nonatomic) UIEdgeInsets tabSeparatorInset;
 
 /**
  *  模拟网络请求到的文字

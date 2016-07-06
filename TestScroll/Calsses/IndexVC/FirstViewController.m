@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tabSeparatorInset = UIEdgeInsetsMake(0, 15, 0, 0);
+    
 }
 
 - (void)didReceiveMemoryWarning {

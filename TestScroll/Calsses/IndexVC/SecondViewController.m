@@ -298,37 +298,37 @@ typedef NS_ENUM(NSInteger,TableViewLocation) {
     
 }
 
--(void)touchesMoveWithSelfView:(UITextView *)selfView isTop:(BOOL)isTop moveSize:(CGFloat)size isBest:(BOOL)isBest
-{
-    return;
-    
-    NSLog(@"--%f",size);
-    
-    CGPoint p = selfView.contentOffset;
-    
-    CGFloat aaaa= selfView.contentSize.height-selfView.frame.size.height;
-    
-    CGFloat currentY = self.tableView.contentOffset.y;
-    
-    if (isTop)
-    {
-
-        if (p.y<=0||p.y>=aaaa)
-        {
-            [self.tableView setContentOffset:CGPointMake(0, size+currentY) animated:YES];
-        }
-        
-    }
-    else
-    {
-        
-        if (p.y<=0||p.y>=aaaa)
-        {
-            [self.tableView setContentOffset:CGPointMake(0, currentY-size) animated:YES];
-        }
-    }
-    
-}
+//-(void)touchesMoveWithSelfView:(UITextView *)selfView isTop:(BOOL)isTop moveSize:(CGFloat)size isBest:(BOOL)isBest
+//{
+//    return;
+//    
+//    NSLog(@"--%f",size);
+//    
+//    CGPoint p = selfView.contentOffset;
+//    
+//    CGFloat aaaa= selfView.contentSize.height-selfView.frame.size.height;
+//    
+//    CGFloat currentY = self.tableView.contentOffset.y;
+//    
+//    if (isTop)
+//    {
+//
+//        if (p.y<=0||p.y>=aaaa)
+//        {
+//            [self.tableView setContentOffset:CGPointMake(0, size+currentY) animated:YES];
+//        }
+//        
+//    }
+//    else
+//    {
+//        
+//        if (p.y<=0||p.y>=aaaa)
+//        {
+//            [self.tableView setContentOffset:CGPointMake(0, currentY-size) animated:YES];
+//        }
+//    }
+//    
+//}
 
 
 @end

@@ -10,6 +10,10 @@
 		83BE21861D2A3CB40007BCE2 /* NewTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BE21851D2A3CB40007BCE2 /* NewTextView.m */; };
 		B40833AA1D2C9DD500F9C570 /* LSTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B40833A91D2C9DD500F9C570 /* LSTextField.m */; };
 		B40833AD1D2C9E3500F9C570 /* TestFieldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40833AC1D2C9E3500F9C570 /* TestFieldViewController.m */; };
+		B40833B31D2CE0F900F9C570 /* UITableViewCell+LSAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = B40833B21D2CE0F900F9C570 /* UITableViewCell+LSAdd.m */; };
+		B40833B61D2CE38800F9C570 /* LSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40833B51D2CE38800F9C570 /* LSNavigationController.m */; };
+		B40833BA1D2CE8E400F9C570 /* LSTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40833B91D2CE8E400F9C570 /* LSTabbarViewController.m */; };
+		B40833BE1D2CEA3000F9C570 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40833BD1D2CEA3000F9C570 /* DiscoverViewController.m */; };
 		B4144E201D23C01C0074D3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4144E1F1D23C01C0074D3E9 /* main.m */; };
 		B4144E231D23C01C0074D3E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4144E221D23C01C0074D3E9 /* AppDelegate.m */; };
 		B4144E291D23C01C0074D3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4144E271D23C01C0074D3E9 /* Main.storyboard */; };
@@ -50,6 +54,14 @@
 		B40833A91D2C9DD500F9C570 /* LSTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTextField.m; sourceTree = "<group>"; };
 		B40833AB1D2C9E3500F9C570 /* TestFieldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFieldViewController.h; sourceTree = "<group>"; };
 		B40833AC1D2C9E3500F9C570 /* TestFieldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestFieldViewController.m; sourceTree = "<group>"; };
+		B40833B11D2CE0F900F9C570 /* UITableViewCell+LSAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+LSAdd.h"; sourceTree = "<group>"; };
+		B40833B21D2CE0F900F9C570 /* UITableViewCell+LSAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+LSAdd.m"; sourceTree = "<group>"; };
+		B40833B41D2CE38800F9C570 /* LSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSNavigationController.h; sourceTree = "<group>"; };
+		B40833B51D2CE38800F9C570 /* LSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSNavigationController.m; sourceTree = "<group>"; };
+		B40833B81D2CE8E400F9C570 /* LSTabbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSTabbarViewController.h; sourceTree = "<group>"; };
+		B40833B91D2CE8E400F9C570 /* LSTabbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSTabbarViewController.m; sourceTree = "<group>"; };
+		B40833BC1D2CEA3000F9C570 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
+		B40833BD1D2CEA3000F9C570 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
 		B4144E1B1D23C01C0074D3E9 /* TestScroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestScroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4144E1F1D23C01C0074D3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B4144E211D23C01C0074D3E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +117,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B40833B71D2CE8CF00F9C570 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				B40833B81D2CE8E400F9C570 /* LSTabbarViewController.h */,
+				B40833B91D2CE8E400F9C570 /* LSTabbarViewController.m */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		B40833BB1D2CEA1500F9C570 /* DiscoverVC */ = {
+			isa = PBXGroup;
+			children = (
+				B40833BC1D2CEA3000F9C570 /* DiscoverViewController.h */,
+				B40833BD1D2CEA3000F9C570 /* DiscoverViewController.m */,
+			);
+			path = DiscoverVC;
+			sourceTree = "<group>";
+		};
 		B4144E121D23C01C0074D3E9 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +201,8 @@
 		B4144E511D23C0B00074D3E9 /* Calsses */ = {
 			isa = PBXGroup;
 			children = (
+				B40833BB1D2CEA1500F9C570 /* DiscoverVC */,
+				B40833B71D2CE8CF00F9C570 /* tabbar */,
 				B4144E581D23C18B0074D3E9 /* IndexVC */,
 				B4144E571D23C17B0074D3E9 /* BaseVC */,
 			);
@@ -182,6 +214,8 @@
 			children = (
 				B4144E541D23C0CD0074D3E9 /* NSString+LSAdd.h */,
 				B4144E551D23C0CD0074D3E9 /* NSString+LSAdd.m */,
+				B40833B11D2CE0F900F9C570 /* UITableViewCell+LSAdd.h */,
+				B40833B21D2CE0F900F9C570 /* UITableViewCell+LSAdd.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -202,6 +236,8 @@
 				B4144E5A1D23C1A00074D3E9 /* LSBaseViewController.m */,
 				B4144E5C1D23C1B10074D3E9 /* LSBaseTableViewController.h */,
 				B4144E5D1D23C1B10074D3E9 /* LSBaseTableViewController.m */,
+				B40833B41D2CE38800F9C570 /* LSNavigationController.h */,
+				B40833B51D2CE38800F9C570 /* LSNavigationController.m */,
 			);
 			path = BaseVC;
 			sourceTree = "<group>";
@@ -355,6 +391,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B40833BA1D2CE8E400F9C570 /* LSTabbarViewController.m in Sources */,
+				B40833BE1D2CEA3000F9C570 /* DiscoverViewController.m in Sources */,
 				B4144E6A1D23C3D50074D3E9 /* SecondViewController.m in Sources */,
 				B4144E671D23C3C40074D3E9 /* FirstViewController.m in Sources */,
 				B4144E611D23C1F60074D3E9 /* IndexViewController.m in Sources */,
@@ -362,10 +400,12 @@
 				B4144E5B1D23C1A00074D3E9 /* LSBaseViewController.m in Sources */,
 				B4144E561D23C0CD0074D3E9 /* NSString+LSAdd.m in Sources */,
 				83BE21861D2A3CB40007BCE2 /* NewTextView.m in Sources */,
+				B40833B31D2CE0F900F9C570 /* UITableViewCell+LSAdd.m in Sources */,
 				B4144E201D23C01C0074D3E9 /* main.m in Sources */,
 				B4144E641D23C2FC0074D3E9 /* GlobalTool.m in Sources */,
 				B4144E5E1D23C1B10074D3E9 /* LSBaseTableViewController.m in Sources */,
 				B40833AA1D2C9DD500F9C570 /* LSTextField.m in Sources */,
+				B40833B61D2CE38800F9C570 /* LSNavigationController.m in Sources */,
 				B40833AD1D2C9E3500F9C570 /* TestFieldViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
