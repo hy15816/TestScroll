@@ -32,7 +32,6 @@
     
     [self.view addSubview:self.tableView];
     
-    NSLog(@"MAXFLOAT:%f",MAXFLOAT);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,9 +82,12 @@
     
     if (!_alphabetField) {
         _alphabetField = [[LSTextField alloc] initWithFrame:CGRectMake(20, 250, self.view.frame.size.width-20*2, 35)];
-        _alphabetField.maxInputLength = 20;
-        _alphabetField.placeholder = @"纯字母field,限制长度20";
-        _alphabetField.textType = LSTextFieldTextTypeAlphabet;
+//        _alphabetField.maxInputLength = 20;
+//        _alphabetField.placeholder = @"纯字母field,限制长度20";
+//        _alphabetField.textType = LSTextFieldTextTypeAlphabet;
+        _alphabetField.maxInputLength = 7;
+        _alphabetField.placeholder = @"输入金额类型,限制7位数";
+        _alphabetField.textType = LSTextFieldTextTypeAmount;
         _alphabetField.keyboardType = UIKeyboardTypeASCIICapable;
         _alphabetField.borderStyle = UITextBorderStyleRoundedRect;
     }

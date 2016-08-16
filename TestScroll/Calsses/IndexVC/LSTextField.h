@@ -16,7 +16,8 @@ typedef NS_ENUM(NSInteger,LSTextFieldTextType) {
     LSTextFieldTextTypeDefault = 0,         // 默认,所有类型<数字，字母，符号等>
     LSTextFieldTextTypeNumber,              // 纯数字
     LSTextFieldTextTypeAlphabet,            // 纯字母
-    LSTextFieldTextTypeAlphanumeric         // 纯(字母数字)
+    LSTextFieldTextTypeAlphanumeric,        // 纯(字母数字)
+    LSTextFieldTextTypeAmount               // 输入金额类型
 };
 
 @interface LSTextField : UITextField<UITextFieldDelegate>
@@ -27,7 +28,7 @@ typedef NS_ENUM(NSInteger,LSTextFieldTextType) {
 @property (assign,nonatomic) BOOL popKeyboard;
 
 /**
- *  最大输入长度
+ *  最大输入长度 df = ARG_MAX
  */
 @property (assign,nonatomic) NSInteger maxInputLength;
 

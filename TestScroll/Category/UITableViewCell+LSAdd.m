@@ -12,6 +12,10 @@
 
 + (UITableViewCell *)cellWithTableView:(UITableView *)tableView cid:(NSString *)cellID{
     
+//    NSLog(@"classString:%@",[tableView class]);
+//    NSString *_cid = [NSString stringWithFormat:@"%@_cellid",[tableView class]];
+//    static NSString *cellid = @"tableviewCellID";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
